@@ -102,6 +102,10 @@ PRODUCT_CHARACTERISTICS := nosdcard
 DEVICE_PACKAGE_OVERLAYS := \
     device/lge/hammerhead/overlay
 
+# Torch
+PRODUCT_PACKAGES += \
+    Torch
+
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
