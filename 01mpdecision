@@ -1,0 +1,42 @@
+#!/system/bin/sh
+#
+# Check if we have a full mpdecision replacement, if not rename
+# mpdecision prebuilt to default service name and let 3rd party
+# kernel handel it. This script is just to keep up 3rd party
+# compatibility without msm_mpdecision.
+# Otherwise we would kill the prebuilt completly
+
+# Open source mpdecision sys path
+MSM_MPD=/sys/kernel/msm_mpdecision/conf/
+
+# Prebuilt mpdecision stock
+MPD=/system/bin/mpdecision
+
+# Prebuilt disabled mpdecision
+MPD_DISABLED=/system/bin/mpdecision_disabled
+
+if [ ! -d "$MSM_MPD" ];
+  then
+    # No msm_mpdecision found in kernel. Rename prebuilt
+    # to stock default
+    if [ -e "$MPD_DISABLED" ];
+      then
+        echo "Kernel changed and has no open source msm_mpdecision."
+        echo "Activating prebuilt mpdecision..."
+        mount -o remount,rw /system
+        mv "$MPD_DISABLED" "$MPD"
+        mount -o remount,r /system
+    fi
+  else
+    # msm_mpdecision found in kernel.
+    # Disable prebuilt.
+    if [ -e "$MPD" ];
+      then
+        echo "Open source msm_mpdecision detected."
+        echo "Disable prebuilt mpdecision..."
+        mount -o remount,rw /system
+        mv "$MPD" "$MPD_DISABLED"
+        mount -o remount,r /system
+    fi
+fi
+
