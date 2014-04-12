@@ -1,19 +1,28 @@
 #!/system/bin/sh
 #
-# Check if we have a full mpdecision replacement, if not rename
-# mpdecision prebuilt to default service name and let 3rd party
+# Check if we have a full mpdecision and thermal engine replacement, if not rename
+# mpdecision and thermal engine prebuilt to default service name and let 3rd party
 # kernel handel it. This script is just to keep up 3rd party
-# compatibility without msm_mpdecision.
+# compatibility without msm_mpdecision or msm_thermal.
 # Otherwise we would kill the prebuilt completly
 
 # Open source mpdecision sys path
 MSM_MPD=/sys/kernel/msm_mpdecision/conf/
 
+# Open source thermal engine sys path
+MSM_THERMAL=/sys/kernel/msm_thermal/conf/allowed_mid_freq
+
 # Prebuilt mpdecision stock
 MPD=/system/bin/mpdecision
 
+# Prebuilt thermal engine stock
+THERMAL=/system/bin/thermal-engine-hh
+
 # Prebuilt disabled mpdecision
 MPD_DISABLED=/system/bin/mpdecision_disabled
+
+# Prebuilt disabled thermal engine
+THERMAL_DISABLED=/system/bin/thermal-engine-hh_disabled
 
 if [ ! -d "$MSM_MPD" ];
   then
@@ -36,6 +45,31 @@ if [ ! -d "$MSM_MPD" ];
         echo "Disable prebuilt mpdecision..."
         mount -o remount,rw /system
         mv "$MPD" "$MPD_DISABLED"
+        mount -o remount,r /system
+    fi
+fi
+
+if [ ! -e "$MSM_THERMAL" ];
+  then
+    # No msm_thermal engine found in kernel. Rename prebuilt
+    # to stock default
+    if [ -e "$THERMAL_DISABLED" ];
+      then
+        echo "Kernel changed and has no open source thermal engine."
+        echo "Activating prebuilt thermal engine..."
+        mount -o remount,rw /system
+        mv "$THERMAL_DISABLED" "$THERMAL"
+        mount -o remount,r /system
+    fi
+  else
+    # msm_thermal engine found in kernel.
+    # Disable prebuilt.
+    if [ -e "$THERMAL" ];
+      then
+        echo "Open source thermal engine detected."
+        echo "Disable prebuilt thermal engine..."
+        mount -o remount,rw /system
+        mv "$THERMAL" "$THERMAL_DISABLED"
         mount -o remount,r /system
     fi
 fi
