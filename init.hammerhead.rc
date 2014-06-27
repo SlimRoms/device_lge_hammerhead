@@ -200,6 +200,7 @@ on post-fs-data
     write /sys/devices/system/cpu/cpufreq/slim/up_threshold 90
     write /sys/devices/system/cpu/cpufreq/slim/up_threshold_multi_core 80
     write /sys/devices/system/cpu/cpufreq/slim/up_threshold_any_cpu_load 80
+    write /sys/devices/system/cpu/cpufreq/slim/gboost 0
 
     # We leave ondemand tuned values here for compatibility reasons on third party
     # kernels which edit the ramdisk.
