@@ -5,7 +5,7 @@
    "branch": "kk4.4"
  },
  {
-   "repository": "SlimRoms/android_kernel_lge_hammerhead",
+   "repository": "SlimRoms/kernel_lge_hammerhead",
    "target_path": "kernel/lge/hammerhead",
    "branch": "kk4.4"
  }
