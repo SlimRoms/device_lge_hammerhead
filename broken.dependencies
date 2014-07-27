@@ -1,7 +1,7 @@
 [
  {
-   "remote": "lsd",
-   "repository": "android_kernel_lge_hammerhead",
+   "remote": "gh",
+   "repository": "LiquidSmooth-Devices/android_kernel_lge_hammerhead",
    "target_path": "kernel/lge/hammerhead",
    "revision": "kitkat"
  },
