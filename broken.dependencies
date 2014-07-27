@@ -1,9 +1,9 @@
 [
  {
-   "remote":      "gh",
-   "repository":  "SlimRoms/kernel_lge_hammerhead",
+   "remote": "lsd",
+   "repository": "android_kernel_lge_hammerhead",
    "target_path": "kernel/lge/hammerhead",
-   "branch":      "kk4.4"
+   "revision": "kitkat"
  },
  {
    "remote":      "gh",
