@@ -33,6 +33,7 @@ BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 # Define kernel config for inline building
 TARGET_KERNEL_CONFIG := slim_hammerhead_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-arm-eabi-4.8
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
