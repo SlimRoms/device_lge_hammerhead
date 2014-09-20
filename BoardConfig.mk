@@ -133,4 +133,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 TARGET_TOUCHBOOST_FREQUENCY:= 1200
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
