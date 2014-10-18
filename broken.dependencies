@@ -1,7 +1,7 @@
 [
  {
    "remote":      "gh",
-   "repository":  "SlimRoms/kernel_lge_hammerhead",
+   "repository":  "CrackerTeg/kernel_lge_hammerhead",
    "target_path": "kernel/lge/hammerhead",
    "branch":      "kk4.4"
  },
