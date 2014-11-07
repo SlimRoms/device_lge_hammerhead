@@ -47,6 +47,7 @@ BOOT_ZIP_OUT_FILE := SlimKernel-$(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell dat
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 TARGET_KERNEL_CONFIG := slim_hammerhead_defconfig
+ENABLE_GRAPHITE := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
