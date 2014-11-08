@@ -30,9 +30,24 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhea
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
+# Prebuilt chromium
+USE_PREBUILT_CHROMIUM := 1
+
+# Disable periodic battery polling
+HEALTHD_CHATTY_MODE := false
+
+# Compiler flags
+TARGET_GCC_VERSION_EXP := 4.8
+TARGET_USE_O3 := true
+STRICT_ALIASING := true
+SUPPRES_UNUSED_WARNING := true
+OPT_MEMORY := true
+BOOT_ZIP_OUT_FILE := SlimKernel-$(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell date +"%Y%m%d")
+
+# Kernel
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 TARGET_KERNEL_CONFIG := slim_hammerhead_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.8-14.04/bin/arm-linux-gnueabihf-
+ENABLE_GRAPHITE := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -118,5 +133,8 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 TARGET_TOUCHBOOST_FREQUENCY:= 1200
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 -include vendor/lge/hammerhead/BoardConfigVendor.mk

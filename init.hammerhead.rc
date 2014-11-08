@@ -19,6 +19,8 @@ import init.hammerhead.usb.rc
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chown system system /sys/kernel/debug/kgsl/proc
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
+    write /sys/block/mmcblk0/queue/scheduler noop
 
 on init
     chmod 0701 /mnt/media_rw
@@ -65,8 +67,8 @@ on boot
     chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
 
     #bluetooth UART dev
-    chown bluetooth net_bt_stack /sys/devices/platform/msm_serial_hs.0/clock
-    chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
+    chown bluetooth net_bt_stack /sys/devices/f9960000.uart/clock
+    chmod 0660 /sys/devices/f9960000.uart/clock
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -302,6 +304,9 @@ on property:sys.boot_completed=1
 
     # enable slimport detection
     write /sys/module/slimport/parameters/enable_irq 1
+
+on property:init.svc.bootanim=stopped
+    write /sys/block/mmcblk0/queue/scheduler row
 
 service rmt_storage /system/bin/rmt_storage
     class core
