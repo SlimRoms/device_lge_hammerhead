@@ -1,7 +1,7 @@
 [
  {
-   "repository":  "SlimRoms/kernel_lge_hammerhead",
-   "target_path": "kernel/lge/hammerhead",
+   "repository":  "SlimRoms/device_lge_hammerhead-kernel",
+   "target_path": "device/lge/hammerhead-kernel",
    "branch":      "lp5.0"
  }
 ]
