@@ -3,5 +3,9 @@
    "repository":  "RobbieL811/kernel_lge_hammerhead",
    "target_path": "kernel/lge/hammerhead",
    "branch":      "lp5.1"
- }
+ },
+ {
+   "repository": "android_device_qcom_common",
+   "target_path": "device/qcom/common"
+  }
 ]
