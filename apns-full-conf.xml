@@ -27171,7 +27171,7 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="one2free"
+  <apn carrier="csl"
       mcc="454"
       mnc="00"
       apn="mobile"
@@ -27185,7 +27185,7 @@
   <apn carrier="NWMOBILE"
       mcc="454"
       mnc="00"
-      apn="NWMOBILE"
+      apn="nwmobile"
       mmsproxy="192.168.59.61"
       mmsport="8080"
       mmsc="http://192.168.58.171:8002"
@@ -27204,7 +27204,7 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="one2free"
+  <apn carrier="csl"
       mcc="454"
       mnc="02"
       apn="mobile"
@@ -27218,7 +27218,7 @@
   <apn carrier="NWMOBILE"
       mcc="454"
       mnc="02"
-      apn="NWMOBILE"
+      apn="nwmobile"
       mmsproxy="192.168.59.61"
       mmsport="8080"
       mmsc="http://192.168.58.171:8002"
@@ -27285,7 +27285,7 @@
       type="default,supl"
   />
 
-  <apn carrier="one2free"
+  <apn carrier="csl"
       mcc="454"
       mnc="10"
       apn="hkcsl"
@@ -27337,14 +27337,14 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="PCCW-HKT"
+  <apn carrier="csl"
       mcc="454"
       mnc="16"
-      apn="pccw"
-      mmsc="http://3gmms.pccwmobile.com:8080/was"
+      apn="PCCW"
+      mmsc="http://mms.hkcsl.com:8080"
       mmsproxy="10.140.14.10"
       mmsport="8080"
-      authtype="1"
+      authtype="3"
       type="default,supl,mms"
   />
 
@@ -27370,7 +27370,7 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="one2free"
+  <apn carrier="csl"
       mcc="454"
       mnc="18"
       apn="mobile"
@@ -27384,7 +27384,7 @@
   <apn carrier="NWMOBILE"
       mcc="454"
       mnc="18"
-      apn="NWMOBILE"
+      apn="nwmobile"
       mmsproxy="192.168.59.61"
       mmsport="8080"
       mmsc="http://192.168.58.171:8002"
@@ -27392,14 +27392,14 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="PCCW-HKT"
+  <apn carrier="csl"
       mcc="454"
       mnc="19"
-      apn="pccw"
-      mmsc="http://3gmms.pccwmobile.com:8080/was"
+      apn="PCCW"
+      mmsc="http://mms.hkcsl.com:8080"
       mmsproxy="10.140.14.10"
       mmsport="8080"
-      authtype="1"
+      authtype="3"
       type="default,supl,mms"
   />
 
