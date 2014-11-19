@@ -114,7 +114,6 @@ DEVICE_PACKAGE_OVERLAYS := \
 
 # Torch
 PRODUCT_PACKAGES += \
-    Torch \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
