@@ -34,6 +34,8 @@ TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 TARGET_KERNEL_CONFIG := slim_hammerhead_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.8-14.04/bin/arm-linux-gnueabihf-
 
+TOUCH_BOOST_DEBUG := false
+
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
 # Increase the size if shaders of size greater than 12KB are used.
