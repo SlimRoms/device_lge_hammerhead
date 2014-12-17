@@ -168,5 +168,7 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
+MALLOC_IMPL := dlmalloc
+
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
