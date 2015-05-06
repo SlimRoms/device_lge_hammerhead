@@ -1,0 +1,7 @@
+[
+ {
+   "repository":  "RobbieL811/kernel_lge_hammerhead",
+   "target_path": "kernel/lge/hammerhead",
+   "branch":      "lp5.1"
+ }
+]
