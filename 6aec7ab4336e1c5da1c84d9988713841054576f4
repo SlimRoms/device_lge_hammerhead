@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a288981_23467824",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2015-06-13T07:04:06Z",
+      "side": 1,
+      "message": "fyk, on slimkat we had also those:\n\u003cbool name\u003d\"config_doze_enabled_by_default\"\u003efalse\u003c/bool\u003e\n\u003cbool name\u003d\"config_powerDecoupleAutoSuspendModeFromDisplay\"\u003etrue\u003c/bool\u003e",
+      "range": {
+        "startLine": 335,
+        "startChar": 74,
+        "endLine": 335,
+        "endChar": 75
+      },
+      "revId": "6aec7ab4336e1c5da1c84d9988713841054576f4",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}
