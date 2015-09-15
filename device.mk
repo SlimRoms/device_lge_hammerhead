@@ -99,6 +99,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/spn-conf.xml:system/etc/spn-conf.xml
 
+# Add kernel config
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/init.yank555.lu.kernel.sh:system/etc/init.yank555.lu.kernel.sh
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
