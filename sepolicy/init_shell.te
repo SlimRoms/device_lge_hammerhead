@@ -1,0 +1,1 @@
+allow init_shell swap_block_device:blk_file { read write open };

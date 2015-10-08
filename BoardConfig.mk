@@ -125,6 +125,7 @@ BOARD_SEPOLICY_UNION += \
        file.te \
        healthd.te \
        hostapd.te \
+       init_shell.te \
        irsc_util.te \
        mediaserver.te \
        mpdecision.te \
