@@ -144,5 +144,8 @@ endif
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
+
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
