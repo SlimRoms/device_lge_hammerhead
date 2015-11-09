@@ -123,6 +123,7 @@ BOARD_SEPOLICY_DIRS += \
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
        device.te \
+       platform_app.te \
        system_server.te \
        file_contexts
 endif
