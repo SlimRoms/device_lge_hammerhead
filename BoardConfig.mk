@@ -119,12 +119,6 @@ BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
 ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
 BOARD_SEPOLICY_DIRS += \
        device/lge/hammerhead/sepolicy-hammerhead_fp
-
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-       device.te \
-       system_server.te \
-       file_contexts
 endif
 
 HAVE_ADRENO_SOURCE:= false
