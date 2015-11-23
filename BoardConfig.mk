@@ -119,6 +119,7 @@ BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
 ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
 BOARD_SEPOLICY_DIRS += \
        device/lge/hammerhead/sepolicy-hammerhead_fp
+endif
 
 HAVE_ADRENO_SOURCE:= false
 
