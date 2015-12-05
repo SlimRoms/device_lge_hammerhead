@@ -55,8 +55,8 @@ TARGET_USES_DUAL_DSI_API := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/hammerheadcaf/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/lge/hammerheadcaf/bluetooth/vnd_hammerhead.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/hammerhead/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/lge/hammerhead/bluetooth/vnd_hammerhead.txt
 
 # Wifi related defines
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
@@ -74,7 +74,7 @@ BOARD_USES_SECURE_SERVICES := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOOTLOADER_BOARD_NAME := hammerhead
-TARGET_BOARD_INFO_FILE := device/lge/hammerheadcaf/board-info.txt
+TARGET_BOARD_INFO_FILE := device/lge/hammerhead/board-info.txt
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
@@ -108,9 +108,9 @@ COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
-TARGET_RECOVERY_FSTAB = device/lge/hammerheadcaf/fstab.hammerhead
+TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerheadcaf
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
@@ -123,7 +123,7 @@ TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 include device/qcom/sepolicy/sepolicy.mk
 
 # Board
-BOARD_SEPOLICY_DIRS += device/lge/hammerheadcaf/sepolicy
+BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
 
 HAVE_ADRENO_SOURCE:= false
 
@@ -145,9 +145,16 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/lge/hammerheadcaf/cmhw
+BOARD_HARDWARE_CLASS := device/lge/hammerhead/cmhw
 
--include vendor/lge/hammerheadcaf/BoardConfigVendor.mk
+-include vendor/lge/hammerhead/BoardConfigVendor.mk
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# BlissPop Config Flags
+TARGET_TC_ROM := 4.9-linaro
+TARGET_TC_KERNEL := 4.9-linaro
+
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)

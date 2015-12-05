@@ -1,0 +1,14 @@
+[
+ {
+   "remote": "github",
+   "repository": "BlissRoms-Devices/kernel_lge_hammerhead",
+   "target_path": "kernel/lge/hammerhead",
+   "revision": "mm6.0"
+ },
+ {
+   "remote": "github",
+   "repository": "BlissRoms-Devices/proprietary_vendor_lge_hammerhead",
+   "target_path": "vendor/lge/hammerhead",
+   "revision": "mm6.0"
+ }
+]

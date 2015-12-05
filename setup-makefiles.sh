@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VENDOR=lge
-DEVICE=hammerheadcaf
+DEVICE=hammerhead
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
@@ -120,7 +120,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(TARGET_DEVICE),hammerheadcaf)
+ifeq (\$(TARGET_DEVICE),hammerhead)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libHevcSwDecoder

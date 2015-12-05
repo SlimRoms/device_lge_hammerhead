@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerheadcaf/bluetooth/BCM4339_003.001.009.0079.0339.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335c0.hcd
+    device/lge/hammerhead/bluetooth/BCM4339_003.001.009.0079.0339.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335c0.hcd
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -384,7 +384,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # QCOM display HAL
-$(call project-set-path,qcom-display,device/lge/hammerheadcaf/display)
+$(call project-set-path,qcom-display,device/lge/hammerhead/display)
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)

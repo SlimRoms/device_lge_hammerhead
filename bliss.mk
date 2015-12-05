@@ -3,20 +3,20 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common Bliss stuff.
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/bliss/config/nfc_enhanced.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lge/hammerheadcaf/full_hammerhead.mk)
+$(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := hammerheadcaf
-PRODUCT_NAME := cm_hammerheadcaf
+PRODUCT_DEVICE := hammerhead
+PRODUCT_NAME := bliss_hammerhead
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Nexus 5 CAF
+PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
