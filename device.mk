@@ -244,10 +244,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    HammerheadDoze
-
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_hammerhead
