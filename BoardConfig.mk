@@ -121,7 +121,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := cyanogenmod_hammerhead_defconfig
+TARGET_KERNEL_CONFIG := racer_caf_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 
 # SELinux policies
@@ -156,8 +156,8 @@ BOARD_HARDWARE_CLASS := device/lge/hammerhead/cmhw
 EXTENDED_FONT_FOOTPRINT := true
 
 # BlissPop Config Flags
-TARGET_TC_ROM := 4.9-linaro
-TARGET_TC_KERNEL := 4.9-linaro
+TARGET_TC_ROM := 5.3-sm
+TARGET_TC_KERNEL := 5.3-sm
 
 TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
