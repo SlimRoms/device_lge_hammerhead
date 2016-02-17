@@ -19,6 +19,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_NO_BOOTLOADER := true
 
@@ -158,6 +159,30 @@ EXTENDED_FONT_FOOTPRINT := true
 # BlissPop Config Flags
 TARGET_TC_ROM := 5.3-sm
 TARGET_TC_KERNEL := 5.3-sm
+BLISS_O3 := false
+BLISS_STRICT := false
+BLISS_GRAPHITE := false
+BLISS_KRAIT := false
+BLISS_PIPE := false
+BLISS_PTHREAD := false
+BLISS_GOMP := false
+BLISS_EXTRAGCC := false
+BLISS_SANITIZE := false
 
 TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
+
+ifneq ($(filter 5.% 6.%,$(TARGET_TC_ROM)),)
+ifeq ($(strip $(BLISS_GRAPHITE)),true)
+  LOCAL_DISABLE_GRAPHITE := \
+    camera.hammerhead
+endif
+endif
+
+ifeq ($(strip $(BLISS_STRICT)),true)
+  LOCAL_DISABLE_STRICT := \
+    libmmcamera_interface \
+    camera.hammerhead
+endif
+
+-include vendor/bliss/config/sm.mk
