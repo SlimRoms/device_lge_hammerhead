@@ -156,18 +156,18 @@ BOARD_HARDWARE_CLASS := device/lge/hammerhead/cmhw
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# BlissPop Config Flags
+# Bliss Config Flags
 TARGET_TC_ROM := 5.3-sm
 TARGET_TC_KERNEL := 5.3-sm
-BLISS_O3 := false
-BLISS_STRICT := false
-BLISS_GRAPHITE := false
-BLISS_KRAIT := false
-BLISS_PIPE := false
-BLISS_PTHREAD := false
-BLISS_GOMP := false
-BLISS_EXTRAGCC := false
-BLISS_SANITIZE := false
+BLISS_O3 := true
+BLISS_STRICT := true
+BLISS_GRAPHITE := true
+BLISS_KRAIT := true
+BLISS_PIPE := true
+BLISS_PTHREAD := true
+BLISS_GOMP := true
+BLISS_EXTRAGCC := true
+BLISS_SANITIZE := true
 
 TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
