@@ -525,3 +525,11 @@ service time_daemon /system/bin/time_daemon
     class late_start
     user root
     group root
+    start diag_test_server
+
+# Execute init.d scripts
+service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
+    class late_start
+    user root
+    group shell
+    oneshot
