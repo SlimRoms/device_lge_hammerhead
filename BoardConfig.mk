@@ -158,7 +158,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Bliss Config Flags
 TARGET_TC_ROM := 5.3-sm
-TARGET_TC_KERNEL := 5.3-sm
+TARGET_TC_KERNEL := 6.0-sm
 BLISS_O3 := true
 BLISS_STRICT := true
 BLISS_GRAPHITE := true
