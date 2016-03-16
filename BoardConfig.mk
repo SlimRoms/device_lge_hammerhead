@@ -122,7 +122,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := racer_caf_defconfig
+TARGET_KERNEL_CONFIG := racer_caf_mf_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 
 # SELinux policies
