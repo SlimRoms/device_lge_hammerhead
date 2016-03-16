@@ -338,7 +338,7 @@
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- Doze: force using accelerometer as pick up sensor -->
-    <bool name="config_dozeUseAccelerometer">true</bool>
+    <!--bool name="config_dozeUseAccelerometer">true</bool-->
 
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
