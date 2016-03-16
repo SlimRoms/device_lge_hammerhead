@@ -114,14 +114,6 @@ int power_hint_override(__attribute__((unused)) struct power_module *module,
         return HINT_HANDLED;
     }
 
-    if (hint == POWER_HINT_LOW_POWER) {
-        if (current_power_profile == PROFILE_POWER_SAVE) {
-            set_power_profile(PROFILE_BALANCED);
-        } else {
-            set_power_profile(PROFILE_POWER_SAVE);
-        }
-    }
-
     // Skip other hints in high/low power modes
     if (current_power_profile == PROFILE_POWER_SAVE ||
             current_power_profile == PROFILE_HIGH_PERFORMANCE) {
@@ -130,7 +122,8 @@ int power_hint_override(__attribute__((unused)) struct power_module *module,
 
     if (hint == POWER_HINT_LAUNCH_BOOST) {
         int duration = 2000;
-        int resources[] = { CPUS_ONLINE_MIN_3, 0x211, 0x311, 0x411 };
+        int resources[] = { CPUS_ONLINE_MIN_3,
+            0x211, 0x311, 0x411, 0x511 };
 
         interaction(duration, sizeof(resources)/sizeof(resources[0]), resources);
 
@@ -147,6 +140,40 @@ int power_hint_override(__attribute__((unused)) struct power_module *module,
 
         return HINT_HANDLED;
     }
+
+    if (hint == POWER_HINT_INTERACTION) {
+        int duration = 500, duration_hint = 0;
+        static unsigned long long previous_boost_time = 0;
+
+        if (data) {
+            duration_hint = *((int *)data);
+        }
+
+        duration = duration_hint > 0 ? duration_hint : 500;
+
+        struct timeval cur_boost_timeval = {0, 0};
+        gettimeofday(&cur_boost_timeval, NULL);
+        unsigned long long cur_boost_time = cur_boost_timeval.tv_sec * 1000000 + cur_boost_timeval.tv_usec;
+        double elapsed_time = (double)(cur_boost_time - previous_boost_time);
+        if (elapsed_time > 750000)
+            elapsed_time = 750000;
+        // don't hint if it's been less than 250ms since last boost
+        // also detect if we're doing anything resembling a fling
+        // support additional boosting in case of flings
+        else if (elapsed_time < 250000 && duration <= 750)
+            return HINT_HANDLED;
+
+        previous_boost_time = cur_boost_time;
+
+        int resources[] = { (duration >= 2000 ? CPUS_ONLINE_MIN_3 : CPUS_ONLINE_MIN_2),
+            0x20B, 0x30B, 0x40B, 0x50B };
+
+        if (duration)
+            interaction(duration, sizeof(resources)/sizeof(resources[0]), resources);
+
+        return HINT_HANDLED;
+    }
+
 
     return HINT_NONE;
 }
