@@ -27,4 +27,9 @@
     <integer name="config_dayColorTemperature">6600</integer>
     <integer name="config_nightColorTemperature">5000</integer>
 
+    <!-- Proximity check on screen on -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">500</integer>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+
 </resources>
