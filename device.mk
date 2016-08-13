@@ -159,6 +159,10 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     device/lge/hammerhead/mixer_paths.xml:system/etc/mixer_paths.xml
 
+## Snap Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 PRODUCT_PACKAGES += \
     libqomx_core \
     libmmcamera_interface \
