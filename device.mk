@@ -424,5 +424,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.delay=0 \
     ring.delay=0
 
-$(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x74/msm8x74-gpu-vendor.mk)
