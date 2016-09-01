@@ -370,7 +370,7 @@ service netmgrd /system/bin/netmgrd
 service sensors /system/bin/sensors.qcom
     class main
     user root
-    group root
+    group root wakelock
 
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
