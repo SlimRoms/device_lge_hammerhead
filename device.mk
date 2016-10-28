@@ -352,8 +352,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
 # Camera configuration
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=1
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode=1 \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
 
 # Supports Camera new API2
 PRODUCT_PROPERTY_OVERRIDES += \
