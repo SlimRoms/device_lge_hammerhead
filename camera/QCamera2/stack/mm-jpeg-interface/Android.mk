@@ -12,6 +12,9 @@ LOCAL_C_INCLUDES += \
     $(LOCAL_PATH)/../../../mm-image-codec/qexif \
     $(LOCAL_PATH)/../../../mm-image-codec/qomx_core
 
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
+
 ifeq ($(strip $(TARGET_USES_ION)),true)
     LOCAL_CFLAGS += -DUSE_ION
 endif
