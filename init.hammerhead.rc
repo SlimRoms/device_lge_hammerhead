@@ -30,8 +30,12 @@ on init
 
     symlink /sdcard /storage/sdcard0
 
+    # Setup zswap options
+    write /sys/block/vnswap0/disksize 805306368
+
 on fs
     mount_all ./fstab.hammerhead
+    swapon_all ./fstab.hammerhead
     restorecon_recursive /persist
 
 on early-boot
