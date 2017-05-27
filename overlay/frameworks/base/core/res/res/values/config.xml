@@ -283,6 +283,9 @@
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
+    <!-- Doze: should the proximity sensor (handwave / pocket mode) be used as a pulse signal. -->
+    <bool name="config_dozePulseProximity">true</bool>
+
     <!-- Is the device capable of hot swapping an UICC Card -->
     <bool name="config_hotswapCapable">true</bool>
 
